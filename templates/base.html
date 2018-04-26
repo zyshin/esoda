@@ -1,4 +1,4 @@
-{% load i18n static %}
+{% load i18n static get_settings %}
 {% get_current_language as LANGUAGE_CODE %}
 
 <!DOCTYPE html>
@@ -35,7 +35,7 @@
   <!-- Custom styles for this template -->
   <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css" rel="stylesheet"> -->
   <link href="{% static 'css/toastr.min.css' %}" rel="stylesheet">
-  <link href="{% static 'css/style.css' %}?v={% now 'Ymd' %}" rel="stylesheet">
+  <link href="{% static 'css/style.css' %}?v={% get_settings 'CSS_STYLE_VERSION' %}" rel="stylesheet">
   {% block head %}{% endblock %}
 </head>
 
@@ -201,7 +201,7 @@
 <script src="{% static 'js/toastr.min.js' %}"></script>
 <script src="{% static 'js/jquery.qrcode.min.js' %}"></script>
 <script src="{% static 'js/jquery-ui-modified.js' %}"></script>
-<script src="{% static 'js/esoda-main.js' %}?v={% now 'Ymd' %}"></script>
+<script src="{% static 'js/esoda-main.js' %}?v={% get_settings 'JS_ESODA_MAIN_VERSION' %}"></script>
 <script type="text/javascript">
   $(document).ready(function () {
     toastr.options = {

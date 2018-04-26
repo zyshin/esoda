@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% load i18n %}
-{% load add_tense %}
+{% load add_tense get_settings %}
 
 {% block title %}{% trans "ESODA" %} | {% trans "search result" %}{% endblock %}
 
@@ -165,7 +165,7 @@
 {% block script %}
   <script src="{% static 'js/jquery.mousewheel.min.js' %}"></script>
   <script src="{% static 'js/jquery.mCustomScrollbar.min.js' %}"></script>
-  <script src="{% static 'js/esoda-result.js' %}?v={% now 'Ymd' %}"></script>
+  <script src="{% static 'js/esoda-result.js' %}?v={% get_settings 'JS_ESODA_RESULT_VERSION' %}"></script>
   <script>
     QUERY_PARAMS = '{{ request.GET.urlencode }}';
     REF = '{{ ref }}';

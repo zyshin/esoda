@@ -6,10 +6,7 @@ from django.contrib import messages
 from django.utils.translation import ugettext_lazy as _
 from django.http import JsonResponse
 import json
-from .models import UserProfile
-from esoda.utils import CORPUS
-from esoda.utils import SECOND_LEVEL_FIELD
-from esoda.utils import FIELD_NAME
+from .models import UserProfile, CORPUS, SECOND_LEVEL_FIELD, FIELD_NAME
 
 
 # Create your views here.
@@ -84,45 +81,22 @@ def favorites_view(request):
     return render(request, 'profile/favorites.html', info)
 
 
-tree_first = [0, 3, 323, 326, 329, 332, 335, 338, 342, 346, 349, 352]
-
-
 def get_dept_tree(corpus_id):
-    tree_first = []
     display_tree = []
     c_id = 0
     a_id = 0
     for k in range(len(FIELD_NAME)):
         node0 = TreeNode()
         node0.id = c_id
-        tree_first.append(c_id)
         c_id += 1
         node0.text = FIELD_NAME[k]
         field_tree = []
-        if k == 1:
+        if len(SECOND_LEVEL_FIELD[k]) > 1:
             node0.level = 3
-            for i in range(len(SECOND_LEVEL_FIELD[k])):
-                node = TreeNode()
-                node.id = c_id
-                node.text = SECOND_LEVEL_FIELD[k][i]
-                c_id += 1
-                children = CORPUS[str(a_id)]
-                a_id += 1
-                for i in children:
-                    node1 = TreeNode()
-                    node1.id = c_id
-                    node1.text = i['n']
-                    c_id += 1
-                    if 'conf' in i['i']:
-                        node1.type = 'conf'
-                    else:
-                        node1.type = 'jour'
-                    node.nodes.append(node1.to_dict(corpus_id[node1.id]))
-                field_tree.append(node.to_dict(corpus_id[node.id], (len(node.nodes) > 5)))
-        else:
+        for i in range(len(SECOND_LEVEL_FIELD[k])):
             node = TreeNode()
             node.id = c_id
-            node.text = SECOND_LEVEL_FIELD[k][0]
+            node.text = SECOND_LEVEL_FIELD[k][i]
             c_id += 1
             children = CORPUS[str(a_id)]
             a_id += 1
@@ -131,11 +105,14 @@ def get_dept_tree(corpus_id):
                 node1.id = c_id
                 node1.text = i['n']
                 c_id += 1
+                if 'conf' == i['i'][0:4]:
+                    node1.type = 'conf'
+                else:
+                    node1.type = 'jour'
                 node.nodes.append(node1.to_dict(corpus_id[node1.id]))
             field_tree.append(node.to_dict(corpus_id[node.id]))
         node0.nodes = field_tree
         display_tree.append(node0.to_dict(corpus_id[node0.id]))
-    # print tree_first
     return display_tree
 
 
@@ -156,10 +133,6 @@ class TreeNode():
         self.type = ''
 
     def to_dict(self, checked, expand=False):
-        if checked == 0:
-            check = False
-        else:
-            check = True
         temp = {
             'id': self.id,
             'text': self.text,

@@ -12,82 +12,73 @@
 <div class="guide-page">
   <div class="container">
     <div class="row guide-block">
-      <div class="guide-title1">关于易搜搭</div>
+      <div class="guide-title1">&middot; 关于易搜搭 &middot;</div>
     </div>
     <div class="row guide-intro">
-      <div class="col-md-12">
-        <p class="h4">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;易搜搭ESODA是清华HCI Lab工作室出品的一款适合国人英语写作的信息助手，它广泛收录了各学科领域的海量论文作为数据库，通过智能语言分析等算法，供您通过各种方式查询地道的英语搭配和例句。从今以后像老外一样写作，再也不用担心自己的语言问题了！
+      <div class="col-md-10">
+        <p class="h5">
+        易搜搭ESODA是清华HCI Lab工作室出品的一款适合国人英语写作的信息助手，它广泛收录了各学科领域的海量论文作为数据库，通过智能语言分析等算法，供您通过各种方式查询地道的英语搭配和例句。从今以后像老外一样写作，再也不用担心自己的语言问题了！
         </p>
       </div>
     </div>
     <div class="row guide-block">
-      <div class="guide-title1">点击预览易搜搭的神奇搜索</div>
-      {% with tab="guide" %}
-        {% include "esoda/guide_icon.html" %}
-      {% endwith %}
-    </div>
-    <div class="row guide-block">
-      <div class="guide-title1">进阶搜搭</div>
-      <div id="guide0" class="row guide-group">
-        <div class="col-md-10">
-          <div class="guide-title2">选词优化</div>
-          <div>英文词汇太匮乏？看看国外作者相同意思怎么说。 </div>
-          <div class="guide-content">Query a word, synonymous will be in the synonymous expression part of the results page.</div>
+      <div class="guide-title1">&middot; 进阶搜搭 &middot;</div>
+      <div id="guide0" class="row guide-group col-md-10">
+        <div class="guide-title2 col-md-2"><img src="{% static 'img/usage_1.png' %}" alt="...">选词优化</div>
+        <div class="guide-text col-md-10 col-xs-12">
+          <h5>搜索单词或词组后，可替换词一栏将按照数量多少为您展示相关的可替换用法，您可以进行选择，并查看对应例句。</h5>
+          <div class="guide-content">例如：搜索improve quality，您可以在左侧栏中寻找可替换用法。</div>
+          <div class="row example-image">
+            <img src="{% static 'img/example1.png' %}" alt="...">
+          </div>
         </div>
-        <div class="col-md-2">
-          <a href="/?q=efficient"><button class="btn guide-btn">点击查看案例</button></a>
-        </div>
+{#        <div class="col-md-2">#}
+{#          <a href="/?q=efficient"><button class="btn guide-btn">点击查看案例</button></a>#}
+{#        </div>#}
       </div>
-      <div class="row example-image">
-        <img src="{% static 'img/example1.png' %}" alt="...">
-      </div>
-      <div id="guide1" class="row guide-group">
-        <div class="col-md-10">
-          <div class="guide-title2">搭配推荐</div>
-          <div>担心搭配不地道？规范论文让各式搭配一目了然。</div>
-          <div class="guide-content">Query a word, different collocation forms will appear in the results page, each with a variety of collocations. And you can query collocation to learn about the relevant ones.</div>
+
+      <div id="guide1" class="row guide-group col-md-10">
+        <div class="guide-title2 col-md-2"><img src="{% static 'img/usage_2.png' %}" alt="...">搭配推荐</div>
+        <div class="guide-text col-md-10 col-xs-12">
+          <h5>易搜搭提供多种搭配查询：动宾、修饰、介词、主谓，帮助您更直接地寻找想要的搭配类型。</h5>
+          <div class="guide-content">例如：搜索improve quality，您可以选择不同搭配寻找相关例句。</div>
+          <div class="row example-image">
+            <img src="{% static 'img/example2.png' %}" alt="...">
+          </div>
         </div>
-        <div class="col-md-2">
-          <a href="/?q=wait"><button class="btn guide-btn">点击查看案例</button></a>
-        </div>
+{#        <div class="col-md-2">#}
+{#          <a href="/?q=wait"><button class="btn guide-btn">点击查看案例</button></a>#}
+{#        </div>#}
       </div>
-      <div class="row example-image">
-        <img src="{% static 'img/example2.png' %}" alt="...">
-      </div>
-      <div id="guide2" class="row guide-group">
-        <div class="col-md-10">
-          <div class="guide-title2">中英混搜</div>
-          <div>满腹经纶难用英文表述？中文一样能找地道说法。</div>
-          <div class="guide-content">Enter keyword or phrase in Chinese and English is both ok. A query can contain both Chinise and English.</div>
+
+      <div id="guide2" class="row guide-group col-md-10">
+        <div class="guide-title2 col-md-2"><img src="{% static 'img/usage_3.png' %}" alt="...">中英混搜</div>
+        <div class="guide-text col-md-10 col-xs-12">
+          <h5>英文表达不明确时，您可以中英混搜，我们将为您匹配最合适的英文搭配。</h5>
+          <div class="guide-content">例如：您可以直接搜索 提高quality 寻找结果。</div>
+          <div class="row example-image">
+            <img src="{% static 'img/example3.png' %}" alt="...">
+          </div>
         </div>
-        <div class="col-md-2">
-          <a href="/?q=减少+the+demand+of"><button class="btn guide-btn">点击查看案例</button></a>
-        </div>
+{#        <div class="col-md-2">#}
+{#          <a href="/?q=减少+the+demand+of"><button class="btn guide-btn">点击查看案例</button></a>#}
+{#        </div>#}
       </div>
-      <div class="row example-image">
-        <img src="{% static 'img/example3.png' %}" alt="...">
-      </div>
-      <div id="guide3" class="row guide-group">
-        <div class="col-md-10">
-          <div class="guide-title2">词组搜搭</div>
-          <div>词组太长记不清？试试输入多个单词找相关例句。</div>
-          <div class="guide-content">Enter a keyword or phrase to find example sentences.</div>
+
+      <div id="guide3" class="row guide-group col-md-10">
+        <div class="guide-title2 col-md-2"><img src="{% static 'img/usage_4.png' %}" alt="...">词组搜搭</div>
+        <div class="guide-text col-md-10 col-xs-12">
+          <h5>除了单词，您还可以在易搜搭上搜索词组，我们将为您提供对应的可替换词和不同搭配，帮助您找到最地道的用法。</h5>
+          <div class="guide-content">例如：搜索了improve quality，您可以寻找替换说法和不同搭配。</div>
+          <div class="row example-image">
+            <img src="{% static 'img/example4.png' %}" alt="...">
+          </div>
         </div>
-        <div class="col-md-2">
-          <a href="/?q=make+effort"><button class="btn guide-btn">点击查看案例</button></a>
-        </div>
-      </div>
-      <div class="row example-image">
-        <img src="{% static 'img/example4.png' %}" alt="...">
+{#        <div class="col-md-2">#}
+{#          <a href="/?q=make+effort"><button class="btn guide-btn">点击查看案例</button></a>#}
+{#        </div>#}
       </div>
     </div>
   </div>
 </div>
 {% endblock content %}
-
-{% block script %}
-  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-  <script src="{% static 'js/esoda-icon.js' %}?v={% now 'Ymd' %}"></script>
-
-{% endblock script %}

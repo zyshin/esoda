@@ -227,6 +227,12 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 
+if os.path.isdir(STATIC_ROOT):
+    CSS_STYLE_VERSION = '%d' % os.path.getmtime(os.path.join(STATIC_ROOT, 'css', 'style.css'))
+    JS_ESODA_INDEX_VERSION = '%d' % os.path.getmtime(os.path.join(STATIC_ROOT, 'js', 'esoda-index.js'))
+    JS_ESODA_RESULT_VERSION = '%d' % os.path.getmtime(os.path.join(STATIC_ROOT, 'js', 'esoda-result.js'))
+    JS_ESODA_MAIN_VERSION = '%d' % os.path.getmtime(os.path.join(STATIC_ROOT, 'js', 'esoda-main.js'))
+
 
 # Email configuration
 

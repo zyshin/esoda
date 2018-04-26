@@ -210,7 +210,6 @@ a {
     .navbar-brand {
         margin-top: 20px;
         width: 170px;
-        margin-left: 5px !important;
         padding-top: 10px;
     }
 
@@ -236,7 +235,7 @@ a {
     }
 
     .navbar-search {
-        width: calc(100vw - 90px) !important;
+        width: calc(100vw - 80px) !important;
     }
 
     .login {
@@ -272,6 +271,7 @@ a {
 
     #navbar.navbar-collapse {
         background-color: rgba(255, 255, 255, 0.9);
+        padding-left: 10px;
     }
 
     .footer {
@@ -288,12 +288,24 @@ a {
         margin-left: 20px !important;
         margin-right: 20px !important;
     }
+
     .result-main .CollapseColloc {
         padding-left: 15px !important;
     }
+
     .modal-login-sm {
         max-width: 445px;
         width: auto !important;
+    }
+
+    .jumbotron {
+        padding-top: 110px !important;
+    }
+
+    .navbar-index .nav-pills > li > a,
+    .navbar-index .nav-pills > li.active > a {
+        padding-left: 5px !important;
+        padding-right: 5px !important;
     }
 }
 
@@ -360,6 +372,7 @@ a {
 
 .navbar-header > .navbar-toggle {
     margin-top: 20px;
+    margin-right: 0;
 }
 
 .container > .navbar-header {
@@ -396,7 +409,7 @@ a {
 .esoda-tips {
     text-align: left;
     margin-top: 10px;
-    margin-left: 20px;
+    margin-left: 17px;
     color: #fff;
     font-size: 16px;
     opacity: 0.8;
@@ -449,7 +462,7 @@ a {
 
 .jumbotron {
     height: 650px;
-    padding-top: 171px;
+    padding-top: 150px;
     /*    padding-bottom: 263px;*/
 }
 
@@ -479,6 +492,7 @@ a {
 .esoda-tips .btn-link {
     color: white;
     padding-left: 0;
+    border: 0;
 }
 
 .read .btn {
@@ -582,7 +596,7 @@ a {
 .dropdown-small {
     display: inline-flex;
     margin-top: 10px;
-    margin-right: 20px;
+    margin-right: 5px;
 }
 
 .dropdown-small a {
@@ -1948,8 +1962,8 @@ button.close:focus {
 }
 
 .example-box {
-    margin-left: 39px;
-    margin-right: 39px;
+    margin-left: 40px;
+    margin-right: 40px;
     margin-bottom: 5px;
     /*border-top: 1px solid #D3D3D3;*/
     padding-bottom: 5px;
@@ -2167,15 +2181,30 @@ button.close:focus {
 .guide-page {
     background-color: #FAFAFA;
     padding-bottom: 40px;
-    font-size: 20px;
+    font-size: 22px;
 }
 
 .guide-group {
-    padding: 20px;
+    padding: 20px 15px;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.guide-group h5 {
+    margin-top: -1px;
+    text-align: justify;
+    line-height: 1.67;
 }
 
 .guide-intro {
     padding-top: 10px;
+}
+
+.guide-intro > div{
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .guide-intro p {
@@ -2184,11 +2213,10 @@ button.close:focus {
 }
 
 .guide-block {
-    margin-top: 60px
+    margin-top: 50px
 }
 
 .guide-title1 {
-    margin-bottom: 30px;
     text-align: center;
     color: #63b7e6;
 }
@@ -2196,10 +2224,26 @@ button.close:focus {
 .guide-title2 {
     font-weight: 600;
     float: left;
+    font-size: 20px;
+    padding-left: 0;
+    margin-bottom: 5px;
+}
+
+.guide-title2 > img {
+    width: 22px;
+    margin-top: -6px;
+}
+
+.guide-text {
+    padding-right: 0;
+    padding-left: 0;
 }
 
 .guide-content {
     color: #9b9b9b;
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-size: 14px;
 }
 
 .guide-btn:focus,
@@ -2217,7 +2261,6 @@ button.close:focus {
 .example-image {
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 40px;
     text-align: center;
 }
 

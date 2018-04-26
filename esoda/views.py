@@ -21,7 +21,7 @@ from .thesaurus import synonyms
 from .lemmatizer import lemmatize
 from .EsAdaptor import EsAdaptor
 from common.models import Comment
-from authentication.views import tree_first
+from authentication.models import TREE_FIRST, corpus_id2cids, FIELD_NAME
 
 
 ALL_DEPS = [u'(主谓)', u'(动宾)', u'(修饰)', u'(介词)']
@@ -39,7 +39,7 @@ def get_cids(user, r=None):
         # TODO: name = get_name(dbs, cids)
         name = u''
         count = 0
-        for i in tree_first:
+        for i in TREE_FIRST:
             if corpus_id[i] == 1:
                 name = name + FIELD_NAME[count] + u', '
             count += 1
@@ -48,6 +48,7 @@ def get_cids(user, r=None):
         name = u'通用英语'
     if r:
         r['domain'] = name
+
     dbs = dbs or DEFAULT_ES_DBS
     cids = cids or DEFAULT_ES_CIDS
     return dbs, cids
@@ -103,8 +104,8 @@ def esoda_view(request):
         # ],
     }
 
-    dbs, cids = get_cids(request.user, r=r)
     r['tlen'] = len(qt)
+    dbs, cids = get_cids(request.user, r=r)
     cL, cL_index = collocation_list(qt, ref, poss, dep, dbs, cids)
     r['collocationList'] = {'cL': cL, 'index': cL_index}
 
@@ -248,7 +249,7 @@ def sentence_view(request):
         'example_number': len(sr['sentence']),
         'search_time': sr['time'],
         'exampleList': sr['sentence'],
-        'similar_sen': abs(int(dep_count) - len(sr['sentence']))
+        'similar_sen': abs(min(int(dep_count), 50) - len(sr['sentence']))
     }
     return render(request, 'esoda/sentence_result.html', info)
 

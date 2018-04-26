@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% load i18n %}
+{% load get_settings %}
 
 {% block header %}
 {% with tab="index" %}
@@ -234,7 +235,6 @@
 {% block script %}
   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
   <script src="{% static 'js/ie10-viewport-bug-workaround.js' %}"></script>
-  <script src="{% static 'js/esoda-index.js' %}?v={% now 'Ymd' %}"></script>
-  <script src="{% static 'js/esoda-icon.js' %}?v={% now 'Ymd' %}"></script>
+  <script src="{% static 'js/esoda-index.js' %}?v={% get_settings 'JS_ESODA_INDEX_VERSION' %}"></script>
 
 {% endblock script %}

@@ -125,11 +125,17 @@ $(function () {
           li.attr("aria-label", item.category + " : " + item.label);
         }
       });
-      ul.append("<li class='ui-autocomplete-category ui-autocomplete-warnings'>" +
-        "<div class=\"inline\">按“回车”发起检索</div>" +
-        "<div class=\"pull-right\">" +
-        "<a href=\"\" id=\"ClearHistory\" onclick=\"window.clearHistory()\">清除搜索历史" +
-        "<span class=\"glyphicon glyphicon-time\"></span></a></div></li>");
+      if ($("#SearchBox").innerWidth() < 420){
+        ul.append("<li class='ui-autocomplete-category ui-autocomplete-warnings'>" +
+        "<a href=\"\" id=\"ClearHistory\" onclick=\"window.clearHistory()\">清除搜索历史</a></div></li>");
+      }
+      else {
+        ul.append("<li class='ui-autocomplete-category ui-autocomplete-warnings'>" +
+          "<div class=\"inline\">按“回车”发起检索</div>" +
+          "<div class=\"pull-right\">" +
+          "<a href=\"\" id=\"ClearHistory\" onclick=\"window.clearHistory()\">清除搜索历史" +
+          "<span class=\"glyphicon glyphicon-time\"></span></a></div></li>");
+      }
     },
     _renderItem: function (ul, item) {
       return $("<li>")
@@ -317,7 +323,7 @@ $(function () {
   });
 
   $(window).on('click', function (e){
-    $('.jumbotron').css("padding-top", "171px");
+    $('.jumbotron').css("padding-top", "150px");
     auto = 0;
   });
 });

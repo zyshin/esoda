@@ -1,4 +1,8 @@
-@media (max-width: 370px) {
+@media (max-width: 420px) {
+    .domain-tab-pane {
+        margin: 0 0 0 20px !important;
+    }
+
     .domain-tab-pane div {
         padding: 5px 5px 10px 5px !important;
     }
@@ -6,6 +10,7 @@
 
 .domain-main {
     padding-top: 30px;
+    padding-right: 15px;
 }
 
 .domain-main .nav-pills a {
@@ -165,7 +170,7 @@
 }
 .domain-item {
     padding:5px 10px 5px 10px;
-    width:160px;
+    width:150px;
 }
 .domain-item-text {
     width: 100px;
@@ -184,7 +189,7 @@
     background-color: #42A5F5;
 }
 .toast-warning {
-    background-color: "red";
+    background-color: red;
 }
 .toast-success a {
     text-decoration: underline;
